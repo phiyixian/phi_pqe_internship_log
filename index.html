@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Internship Progress</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="#"><span class="brand-mark">P</span> Progress Log</a>
+        <div class="topbar-right">
+          <span class="sync-dot"></span><span>Saved locally</span>
+          <button class="avatar" title="Your profile">PY</button>
+        </div>
+      </header>
+
+      <section class="hero">
+        <div>
+          <p class="eyebrow">INTERNSHIP · 2026</p>
+          <h1>Make every day<br /><em>count.</em></h1>
+        </div>
+        <div class="hero-copy">A clear record of your work, learning and momentum — ready to share when the week is done.</div>
+      </section>
+
+      <nav class="tabs" aria-label="Dashboard view">
+        <button class="tab active" data-tab="daily">Daily log</button>
+        <button class="tab" data-tab="weekly">Weekly report</button>
+      </nav>
+
+      <section id="daily-view" class="dashboard-view">
+        <aside class="calendar-card">
+          <div class="calendar-head">
+            <button class="icon-button" id="prev-month" aria-label="Previous month">←</button>
+            <strong id="month-label">August 2026</strong>
+            <button class="icon-button" id="next-month" aria-label="Next month">→</button>
+          </div>
+          <div class="weekdays"><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span><span>S</span></div>
+          <div class="calendar-days" id="calendar-days"></div>
+          <div class="calendar-legend"><span><i class="legend filled"></i> Updated</span><span><i class="legend"></i> No entry</span></div>
+        </aside>
+
+        <section class="entry-panel">
+          <div class="entry-heading">
+            <div><p class="eyebrow" id="entry-weekday">MONDAY</p><h2 id="entry-date">10 August</h2></div>
+            <span class="entry-status" id="entry-status">Draft</span>
+          </div>
+          <form id="entry-form">
+            <label>What I worked on <span>DONE</span><textarea id="done" placeholder="Outline the tasks, experiments or deliverables you completed today."></textarea></label>
+            <label>What I plan next <span>PLAN</span><textarea id="planned" placeholder="What is the next useful step?"></textarea></label>
+            <label>Research & learning <span>NOTES</span><textarea id="learning" placeholder="New knowledge, test results, useful observations or general comments."></textarea></label>
+            <div class="form-foot"><span id="save-message">Save your changes when ready</span><button type="submit" class="primary-button">Save daily update <span>↗</span></button></div>
+          </form>
+        </section>
+
+        <aside class="insight-panel">
+          <div class="week-progress">
+            <p class="eyebrow">THIS WEEK</p><strong id="progress-number">0<small>/5</small></strong>
+            <p>days logged</p><div class="progress-track"><i id="progress-bar"></i></div>
+          </div>
+          <div class="prompt-card"><span class="spark">✦</span><p class="eyebrow">REFLECTION PROMPT</p><p id="reflection-prompt">What did you discover today that will make tomorrow easier?</p></div>
+          <div class="recent-section"><p class="eyebrow">RECENT ENTRIES</p><div id="recent-entries"></div></div>
+        </aside>
+      </section>
+
+      <section id="weekly-view" class="weekly-view hidden">
+        <div class="report-toolbar">
+          <div><p class="eyebrow">WEEKLY OVERVIEW</p><h2 id="report-week">10–16 August 2026</h2></div>
+          <div class="toolbar-actions"><button id="week-prev" class="outline-button">← Previous</button><button id="week-next" class="outline-button">Next →</button><button id="print-report" class="primary-button">Generate report <span>↗</span></button></div>
+        </div>
+        <article class="report-card" id="report-card">
+          <div class="report-header"><div class="brand"><span class="brand-mark">P</span> Progress Log</div><div><p class="eyebrow">WEEKLY INTERNSHIP REPORT</p><p id="report-range"></p></div></div>
+          <div class="report-summary"><div><span id="report-days">0</span><small>days logged</small></div><p id="report-intro">Add daily updates to build your weekly report.</p></div>
+          <div class="report-grid">
+            <section><h3>Work completed</h3><div id="report-done"></div></section>
+            <section><h3>Work planned</h3><div id="report-planned"></div></section>
+            <section class="learning-report"><h3>Research & learning</h3><div id="report-learning"></div></section>
+          </div>
+          <footer>Prepared from daily progress updates · Internship Progress Log</footer>
+        </article>
+      </section>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
